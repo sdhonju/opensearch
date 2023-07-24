@@ -353,7 +353,7 @@ variable "create_a_record" {
 
 variable "domain_name" {
   description = "Name of the hosted zone."
-  default     = "aws.moneygram.com"
+  default     = "domain.com"
 }
 
 # variable "record_name" {
