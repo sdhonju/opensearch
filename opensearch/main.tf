@@ -25,7 +25,7 @@ resource "random_password" "master_password" {
 
 # Store opensearc Master Password in Secrets Manager
 module "opensearch_password_secrets_manager" {
-  source = "git::ssh://git@gitlab.com/moneygram1/nonworkloads_grp/cloud_eng_grp/mgi_aws_modules_infrastructure.git//tf_1.x/secrets_manager?ref=main"
+  source = ../secrets_manager
 
   secret          = local.opensearch_master_password
   secret_key_name = var.opensearch_master_password_secret_name
@@ -34,7 +34,7 @@ module "opensearch_password_secrets_manager" {
 
 # Store opensearc Master Username in Secrets Manager
 module "opensearch_username_secrets_manager" {
-  source = "git::ssh://git@gitlab.com/moneygram1/nonworkloads_grp/cloud_eng_grp/mgi_aws_modules_infrastructure.git//tf_1.x/secrets_manager?ref=main"  
+  source = ../secrets_manager
 
   secret          = var.opensearch_master_username
   secret_key_name = var.opensearch_master_username_secret_name
